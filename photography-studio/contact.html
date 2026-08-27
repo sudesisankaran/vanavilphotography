@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | VANAVIL PHOTOGRAPHY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body style="background-color: var(--color-off-white);">
+    <header class="header" id="header" style="background-color: var(--color-dark);">
+        <div class="header-container">
+            <a href="index.html" class="logo">VANAVIL PHOTOGRAPHY</a>
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="packages.html" class="nav-link">Packages</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </nav>
+            <a href="booking.html" class="btn-nav">Check Availability</a>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </header>
+    
+    <section class="section" style="padding-top: calc(var(--header-height) + 4rem);">
+        <div class="container">
+            <div class="grid grid-2 gap-lg align-center">
+                
+                <div class="fade-up">
+                    <h1 style="margin-bottom: 2rem;">Let's Talk.</h1>
+                    <p style="margin-bottom: 2rem;">We would love to hear about your upcoming celebration. Fill out the form or reach out directly.</p>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gray); margin-bottom: 0.5rem;">Phone / WhatsApp</h4>
+                        <a href="tel:+919876543210" style="font-size: 1.25rem;">+91 98765 43210</a>
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gray); margin-bottom: 0.5rem;">Email</h4>
+                        <a href="mailto:hello@vanavilphotography.com" style="font-size: 1.25rem;">hello@vanavilphotography.com</a>
+                    </div>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gray); margin-bottom: 0.5rem;">Studio Address</h4>
+                        <p style="font-size: 1.25rem;">123 Studio Lane,<br>Creative District,<br>City, State 12345</p>
+                        <p style="color: var(--color-gray); font-size: 0.875rem; margin-top: 0.5rem;">By Appointment Only</p>
+                    </div>
+                </div>
+
+                <div class="fade-up delay-100" style="background: white; padding: 3rem; box-shadow: 0 10px 40px rgba(0,0,0,0.05);">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label class="form-label">Name *</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email *</label>
+                            <input type="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Message *</label>
+                            <textarea class="form-control" required style="min-height: 150px;"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+                
+            </div>
+            
+            <div class="fade-up delay-200" style="margin-top: 4rem; width: 100%; height: 400px; background: #ddd; display: flex; align-items: center; justify-content: center;">
+                <p>Google Maps Embed Placeholder</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="contact-success">
+        <div class="modal-content" style="background: white; padding: 3rem; text-align: center; max-width: 400px;">
+            <h2 style="margin-bottom: 1rem;">Message Sent!</h2>
+            <p>We'll get back to you within 24 hours.</p>
+            <button class="btn btn-outline" style="margin-top: 1rem;" onclick="document.getElementById('contact-success').classList.remove('active')">Close</button>
+        </div>
+    </div>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            document.getElementById('contact-success').classList.add('active');
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>

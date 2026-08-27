@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | VANAVIL PHOTOGRAPHY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-search {
+            width: 100%;
+            padding: 1rem 2rem;
+            border: 1px solid rgba(0,0,0,0.1);
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            border-radius: 50px;
+        }
+        .faq-item {
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            padding: 1.5rem 0;
+        }
+        .faq-question {
+            display: flex; justify-content: space-between; align-items: center;
+            cursor: pointer; font-weight: 500; font-size: 1.125rem;
+        }
+        .faq-icon {
+            font-size: 1.5rem; transition: transform 0.3s ease; font-weight: 300;
+        }
+        .faq-item.active .faq-icon { transform: rotate(45deg); }
+        .faq-answer {
+            max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease;
+            color: var(--color-gray);
+        }
+        .faq-item.active .faq-answer { max-height: 500px; padding-top: 1rem; }
+        .faq-category { font-size: 0.75rem; text-transform: uppercase; color: var(--color-gold); margin-bottom: 0.5rem; display: block; }
+        .hidden-item { display: none !important; }
+    </style>
+</head>
+<body>
+    <header class="header" id="header" style="background-color: var(--color-dark);">
+        <div class="header-container">
+            <a href="index.html" class="logo">VANAVIL PHOTOGRAPHY</a>
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="booking.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section" style="padding-top: calc(var(--header-height) + 4rem);">
+        <div class="container faq-container">
+            <h1 class="text-center fade-up" style="margin-bottom: 3rem;">Frequently Asked Questions</h1>
+            
+            <input type="text" id="faqSearch" class="faq-search fade-up" placeholder="Search questions...">
+            
+            <div id="faqList" class="fade-up delay-100">
+                <!-- JS will inject here -->
+            </div>
+        </div>
+    </section>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/faq.js" defer></script>
+</body>
+</html>

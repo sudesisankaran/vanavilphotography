@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | VANAVIL PHOTOGRAPHY</title>
+    <meta name="description" content="We are storytellers. Learn about our philosophy, approach, and the team behind Vanavil Photography.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .team-card {
+            text-align: center;
+        }
+        .team-img-wrap {
+            aspect-ratio: 3/4;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            background: #eee;
+        }
+        .team-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        .team-card:hover .team-img {
+            transform: scale(1.05);
+        }
+        .team-name {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .team-role {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-gold);
+        }
+        
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        @media(min-width: 768px) {
+            .philosophy-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo text-reveal-wrapper"><span class="text-reveal">VANAVIL PHOTOGRAPHY</span></a>
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="portfolio.html" class="nav-link">Portfolio</a>
+                <a href="films.html" class="nav-link">Films</a>
+                <a href="packages.html" class="nav-link">Packages</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <a href="booking.html" class="btn-nav">Check Availability</a>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <nav class="mobile-nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="portfolio.html" class="nav-link">Portfolio</a>
+            <a href="films.html" class="nav-link">Films</a>
+            <a href="packages.html" class="nav-link">Packages</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="booking.html" class="btn btn-primary" style="margin-top: 2rem;">Check Your Date</a>
+        </nav>
+    </div>
+
+    <!-- Page Hero -->
+    <div class="page-hero">
+        <img src="https://images.unsplash.com/photo-1536640712-4d4c36ef0e42?auto=format&fit=crop&w=1920&q=80" alt="About Us" class="page-hero-bg">
+        <div class="page-hero-content">
+            <span class="hero-subtitle fade-up delay-100" style="display: block; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 1rem;">Who We Are</span>
+            <h1 class="page-hero-title fade-up delay-200">We Are Storytellers.</h1>
+        </div>
+    </div>
+
+    <!-- Our Story -->
+    <section class="section">
+        <div class="container philosophy-grid">
+            <div class="fade-up">
+                <h2 style="margin-bottom: 1.5rem;">Our Story</h2>
+                <p>Founded on the belief that memories are our most valuable asset, Vanavil Photography began with a single camera and a profound passion for capturing genuine human connection.</p>
+                <p>Over the years, we've grown into a collective of visual artists, traveling across the country to document celebrations of all sizes. But our core mission remains unchanged: to observe quietly, shoot honestly, and create art out of your real life.</p>
+            </div>
+            <div class="img-reveal fade-up delay-200">
+                <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80" alt="Photographer" class="img-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Philosophy -->
+    <section class="section section-dark text-center">
+        <div class="container fade-up">
+            <h2 style="font-family: var(--font-accent); font-style: italic; margin-bottom: 2rem;">"We don't just take photographs; we make them with our hearts."</h2>
+            <p style="max-width: 600px; margin: 0 auto;">Our philosophy is simple: let moments happen naturally. We believe the best images aren't posed or directed; they are lived. We blend into the background of your celebration, allowing you to be completely present with your loved ones while we preserve the magic as it unfolds.</p>
+        </div>
+    </section>
+
+    <!-- Our Approach -->
+    <section class="section">
+        <div class="container philosophy-grid">
+            <div class="img-reveal fade-up order-first-mobile">
+                <img src="https://images.unsplash.com/photo-1588673752631-f1eb411f15db?auto=format&fit=crop&w=800&q=80" alt="Approach" class="img-cover">
+            </div>
+            <div class="fade-up delay-200">
+                <h2 style="margin-bottom: 1.5rem;">Our Approach</h2>
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 1.25rem;">01. Connect</h4>
+                    <p>We start by getting to know you. Understanding your journey, style, and what matters most to you allows us to tailor our approach.</p>
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 1.25rem;">02. Capture</h4>
+                    <p>On the day, we are unobtrusive observers. We look for light, emotion, and interaction, framing them with artistic precision.</p>
+                </div>
+                <div>
+                    <h4 style="font-size: 1.25rem;">03. Craft</h4>
+                    <p>In post-production, we apply our signature cinematic color grading and careful editing to ensure every frame is a masterpiece.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team -->
+    <section class="section" style="background-color: var(--color-white);">
+        <div class="container">
+            <h2 class="text-center fade-up text-uppercase" style="font-family: var(--font-body); font-size: 1rem; letter-spacing: 0.2em; margin-bottom: 3rem;">Meet The Artists</h2>
+            
+            <div class="team-grid">
+                <div class="team-card fade-up">
+                    <div class="team-img-wrap"><img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?auto=format&fit=crop&w=400&q=80" alt="Lead Photographer" class="team-img loading-lazy"></div>
+                    <h3 class="team-name">Vikram</h3>
+                    <span class="team-role">Lead Photographer</span>
+                </div>
+                <div class="team-card fade-up delay-100">
+                    <div class="team-img-wrap"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=400&q=80" alt="Cinematographer" class="team-img loading-lazy"></div>
+                    <h3 class="team-name">Ananya</h3>
+                    <span class="team-role">Lead Cinematographer</span>
+                </div>
+                <div class="team-card fade-up delay-200">
+                    <div class="team-img-wrap"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80" alt="Editor" class="team-img loading-lazy"></div>
+                    <h3 class="team-name">Karthik</h3>
+                    <span class="team-role">Senior Editor</span>
+                </div>
+                <div class="team-card fade-up delay-300">
+                    <div class="team-img-wrap"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" alt="Drone Operator" class="team-img loading-lazy"></div>
+                    <h3 class="team-name">Rahul</h3>
+                    <span class="team-role">Drone Operator</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Final CTA -->
+    <section class="section section-dark" style="text-align: center; padding: var(--spacing-xl) 0;">
+        <div class="container fade-up">
+            <h2 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1rem;">Let's create together.</h2>
+            <div class="flex justify-center gap-sm" style="margin-top: 2rem;">
+                <a href="booking.html" class="btn btn-primary" style="background-color: var(--color-white); color: var(--color-dark);">Check Availability</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Vanavil Photography. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/animations.js" defer></script>
+</body>
+</html>

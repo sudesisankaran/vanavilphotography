@@ -1,0 +1,65 @@
+/* ==========================================================================
+   Responsive Helpers
+   ========================================================================== */
+
+/* Hidden Helpers */
+.hidden { display: none !important; }
+@media (max-width: 767px) {
+  .hidden-mobile { display: none !important; }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hidden-tablet { display: none !important; }
+}
+@media (min-width: 1024px) {
+  .hidden-desktop { display: none !important; }
+}
+
+/* Typography Responsive */
+@media (max-width: 767px) {
+  .section {
+    padding: var(--spacing-lg) 0;
+  }
+  
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.5rem; }
+  
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+}
+
+/* Image Helpers */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Grid System Overrides */
+.grid-2 { grid-template-columns: 1fr; }
+.grid-3 { grid-template-columns: 1fr; }
+.grid-4 { grid-template-columns: 1fr; }
+
+@media (min-width: 768px) {
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Order Helpers */
+@media (max-width: 767px) {
+  .order-first-mobile { order: -1; }
+  .order-last-mobile { order: 99; }
+}

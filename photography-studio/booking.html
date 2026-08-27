@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Your Date | VANAVIL PHOTOGRAPHY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .booking-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+        }
+        .services-checkboxes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        @media (max-width: 767px) {
+            .services-checkboxes {
+                grid-template-columns: 1fr;
+            }
+            .booking-container {
+                padding: 1.5rem;
+            }
+        }
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            font-size: 0.875rem;
+            cursor: pointer;
+        }
+        .checkbox-label input {
+            margin-right: 10px;
+        }
+        .success-modal {
+            text-align: center;
+            padding: 3rem;
+            background: white;
+        }
+        .success-icon {
+            font-size: 4rem;
+            color: var(--color-gold);
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body style="background-color: var(--color-off-white);">
+    <header class="header" id="header" style="background-color: var(--color-dark);">
+        <div class="header-container">
+            <a href="index.html" class="logo">VANAVIL PHOTOGRAPHY</a>
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="packages.html" class="nav-link">Packages</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </header>
+
+    <section class="section" style="padding-top: calc(var(--header-height) + 4rem);">
+        <div class="container">
+            <div class="booking-container fade-up">
+                <h1 style="text-align: center; margin-bottom: 2rem;">Check Your Date</h1>
+                
+                <form id="bookingForm">
+                    <div class="grid grid-2 gap-sm">
+                        <div class="form-group">
+                            <label class="form-label">Full Name *</label>
+                            <input type="text" class="form-control" id="fullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Phone *</label>
+                            <input type="tel" class="form-control" id="phone" required>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-2 gap-sm">
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Event Type *</label>
+                            <input type="text" class="form-control" id="eventType" required>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-2 gap-sm">
+                        <div class="form-group">
+                            <label class="form-label">Wedding Date *</label>
+                            <input type="date" class="form-control" id="weddingDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Event Location *</label>
+                            <input type="text" class="form-control" id="location" required>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-2 gap-sm">
+                        <div class="form-group">
+                            <label class="form-label">Guest Count</label>
+                            <input type="number" class="form-control" id="guests">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Budget Range</label>
+                            <select class="form-control" id="budget">
+                                <option value="">Select Range</option>
+                                <option value="essential">Essential</option>
+                                <option value="signature">Signature</option>
+                                <option value="luxury">Luxury</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group" style="margin-top: 1rem;">
+                        <label class="form-label">Services Required *</label>
+                        <div class="services-checkboxes" id="servicesRequired">
+                            <label class="checkbox-label"><input type="checkbox" value="Wedding Photography"> Wedding Photography</label>
+                            <label class="checkbox-label"><input type="checkbox" value="Candid Photography"> Candid Photography</label>
+                            <label class="checkbox-label"><input type="checkbox" value="Cinematic Video"> Cinematic Video</label>
+                            <label class="checkbox-label"><input type="checkbox" value="Pre-Wedding"> Pre-Wedding</label>
+                            <label class="checkbox-label"><input type="checkbox" value="Post-Wedding"> Post-Wedding</label>
+                            <label class="checkbox-label"><input type="checkbox" value="Drone"> Drone</label>
+                            <label class="checkbox-label"><input type="checkbox" value="LED Wall"> LED Wall</label>
+                            <label class="checkbox-label"><input type="checkbox" value="Live Stream"> Live Stream</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-control" id="message" placeholder="Tell us more about your celebration..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Submit Enquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="success-modal">
+        <div class="modal-content success-modal" style="width: 90%; max-width: 500px;">
+            <div class="success-icon">✓</div>
+            <h2 style="margin-bottom: 1rem;">Thank you!</h2>
+            <p style="margin-bottom: 2rem;">We've received your enquiry and will get back to you shortly to discuss your big day.</p>
+            <div class="flex flex-col gap-sm">
+                <a href="https://wa.me/919876543210" target="_blank" class="btn btn-primary">WhatsApp Us</a>
+                <a href="tel:+919876543210" class="btn btn-outline">Call Us</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/booking.js" defer></script>
+</body>
+</html>

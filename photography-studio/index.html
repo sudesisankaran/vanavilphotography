@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VANAVIL PHOTOGRAPHY | Premium Wedding Photography & Cinematic Films</title>
+    <meta name="description" content="We capture the emotions, people and little moments that make your celebration uniquely yours. Premium wedding photography and cinematic event studio.">
+    <meta name="keywords" content="wedding photography, cinematic films, candid photography, pre-wedding, post-wedding, drone coverage">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="VANAVIL PHOTOGRAPHY | Premium Wedding Photography">
+    <meta property="og:description" content="Your Story. Our Frames. Forever. Premium photography and cinematic films.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://vanavilphotography.example.com">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "PhotographyBusiness",
+      "name": "VANAVIL PHOTOGRAPHY",
+      "image": "https://images.unsplash.com/photo-1511285560929-80b456fea0bc",
+      "description": "Premium wedding photography and cinematic event studio.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Studio Lane",
+        "addressLocality": "City",
+        "addressRegion": "State",
+        "postalCode": "12345",
+        "addressCountry": "IN"
+      },
+      "telephone": "+919876543210"
+    }
+    </script>
+    
+    <style>
+        /* Home Specific Styles */
+        .hero {
+            min-height: 100vh;
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--color-white);
+            overflow: hidden;
+            padding-top: var(--header-height);
+            padding-bottom: 6rem;
+        }
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            filter: brightness(0.6);
+            transform: scale(1.05);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            padding: 0 var(--spacing-md);
+        }
+        .hero-subtitle {
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: var(--spacing-md);
+            display: block;
+        }
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 6rem);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.1;
+        }
+        .hero-desc {
+            font-size: clamp(1rem, 1.5vw, 1.25rem);
+            color: rgba(255,255,255,0.8);
+            margin-bottom: var(--spacing-lg);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .hero-scroll {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--color-white);
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-10px) translateX(-50%); }
+            60% { transform: translateY(-5px) translateX(-50%); }
+        }
+        
+        .intro-section {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .intro-title {
+            font-size: clamp(2rem, 5vw, 4rem);
+            margin-bottom: var(--spacing-md);
+            font-family: var(--font-accent);
+            font-style: italic;
+        }
+        
+        /* Services Cards */
+        .service-card {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+            display: block;
+            color: var(--color-white);
+            transition: all 0.5s ease;
+        }
+        .service-card-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 1;
+            filter: brightness(0.7);
+        }
+        .service-card:hover .service-card-bg {
+            transform: scale(1.1);
+            filter: brightness(0.4);
+        }
+        .service-card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: var(--spacing-md);
+            z-index: 2;
+            transition: transform 0.5s ease;
+        }
+        .service-card-num {
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            opacity: 0.7;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .service-card-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .service-card-desc {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.7);
+            max-height: 0;
+            opacity: 0;
+            transition: all 0.5s ease;
+            overflow: hidden;
+            margin-bottom: 0;
+        }
+        .service-card:hover .service-card-desc {
+            max-height: 60px;
+            opacity: 1;
+            margin-bottom: 1rem;
+        }
+        .service-card-arrow {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover .service-card-arrow {
+            transform: translateX(10px);
+        }
+
+        /* Portfolio */
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap: var(--spacing-sm);
+            grid-auto-rows: 10px;
+        }
+        .masonry-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+        .masonry-item img {
+            width: 100%;
+            display: block;
+            transition: transform 0.8s ease;
+        }
+        .masonry-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            color: var(--color-white);
+            text-align: center;
+            padding: 1rem;
+        }
+        .masonry-item:hover img {
+            transform: scale(1.05);
+        }
+        .masonry-item:hover .masonry-overlay {
+            opacity: 1;
+        }
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            background: none;
+            border: none;
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-gray);
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .filter-btn.active, .filter-btn:hover {
+            color: var(--color-dark);
+        }
+
+        /* Stats */
+        .stats-grid {
+            text-align: center;
+            padding: var(--spacing-lg) 0;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        .stat-num {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            color: var(--color-gold);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        .stat-label {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Video Section */
+        .video-section {
+            position: relative;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: var(--color-dark);
+        }
+        .video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.5);
+            z-index: 1;
+        }
+        .video-content {
+            position: relative;
+            z-index: 2;
+            color: var(--color-white);
+        }
+        .play-btn {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid var(--color-white);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-white);
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: var(--spacing-md);
+            backdrop-filter: blur(5px);
+        }
+        .play-btn:hover {
+            background: var(--color-white);
+            color: var(--color-dark);
+            transform: scale(1.1);
+        }
+
+        /* Testimonials */
+        .testimonial-slider {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .testimonial-slide {
+            display: none;
+            animation: fade 0.5s ease;
+        }
+        .testimonial-slide.active {
+            display: block;
+        }
+        .stars {
+            color: var(--color-gold);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        .testimonial-text {
+            font-family: var(--font-accent);
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--color-dark);
+        }
+        .testimonial-author {
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.875rem;
+        }
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .slider-btn {
+            background: none;
+            border: 1px solid var(--color-gray);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .slider-btn:hover {
+            border-color: var(--color-dark);
+            background: var(--color-dark);
+            color: var(--color-white);
+        }
+
+        /* Instagram */
+        .insta-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0;
+        }
+        @media(min-width: 768px) {
+            .insta-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media(min-width: 1024px) {
+            .insta-grid { grid-template-columns: repeat(6, 1fr); }
+        }
+        .insta-item {
+            position: relative;
+            aspect-ratio: 1;
+            overflow: hidden;
+        }
+        .insta-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .insta-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(176, 141, 87, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            font-size: 2rem;
+        }
+        .insta-item:hover img {
+            transform: scale(1.1);
+        }
+        .insta-item:hover .insta-overlay {
+            opacity: 1;
+        }
+
+        /* FAQ Preview */
+        .faq-preview {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            padding: 1.5rem 0;
+        }
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 1.125rem;
+        }
+        .faq-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+            font-weight: 300;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: var(--color-gray);
+        }
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo text-reveal-wrapper"><span class="text-reveal">VANAVIL PHOTOGRAPHY</span></a>
+            
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="portfolio.html" class="nav-link">Portfolio</a>
+                <a href="films.html" class="nav-link">Films</a>
+                <a href="packages.html" class="nav-link">Packages</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            
+            <a href="booking.html" class="btn-nav">Check Availability</a>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <nav class="mobile-nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="portfolio.html" class="nav-link">Portfolio</a>
+            <a href="films.html" class="nav-link">Films</a>
+            <a href="packages.html" class="nav-link">Packages</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="booking.html" class="btn btn-primary" style="margin-top: 2rem;">Check Your Date</a>
+        </nav>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80" alt="Wedding Couple" class="hero-bg" id="hero-bg">
+        <div class="hero-content">
+            <span class="hero-subtitle fade-up delay-100">Premium Wedding Photography</span>
+            <h1 class="hero-title fade-up delay-200">
+                Your Story.<br>
+                Our Frames.<br>
+                Forever.
+            </h1>
+            <p class="hero-desc fade-up delay-300">
+                We capture the emotions, people and little moments that make your celebration uniquely yours.
+            </p>
+            <div class="hero-actions fade-up delay-400">
+                <a href="portfolio.html" class="btn btn-primary">Explore Our Work</a>
+                <a href="booking.html" class="btn btn-outline-white">Check Availability</a>
+            </div>
+        </div>
+        <div class="hero-scroll">Scroll to Explore &darr;</div>
+    </section>
+
+    <!-- Intro -->
+    <section class="section">
+        <div class="container intro-section fade-up">
+            <h2 class="intro-title">We preserve how it felt.</h2>
+            <p>From quiet glances to unforgettable celebrations, we transform real moments into photographs and films you'll return to for years.</p>
+            <a href="about.html" class="btn-link" style="margin-top: 1rem;">Our Story &rarr;</a>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section section-dark">
+        <div class="container">
+            <h2 class="text-center fade-up text-uppercase" style="font-family: var(--font-body); font-size: 1rem; letter-spacing: 0.2em; margin-bottom: 3rem;">What We Do</h2>
+            
+            <div class="grid grid-4 gap-sm">
+                <!-- Service 1 -->
+                <a href="wedding-photography.html" class="service-card fade-up">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80" alt="Wedding Photography" class="service-card-bg loading-lazy">
+                    <div class="service-card-content">
+                        <span class="service-card-num">01</span>
+                        <h3 class="service-card-title">Wedding Photography</h3>
+                        <p class="service-card-desc">Timeless captures of your main celebration.</p>
+                        <span class="service-card-arrow">&rarr;</span>
+                    </div>
+                </a>
+                
+                <!-- Service 2 -->
+                <a href="candid-photography.html" class="service-card fade-up delay-100">
+                    <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=600&q=80" alt="Candid Photography" class="service-card-bg loading-lazy">
+                    <div class="service-card-content">
+                        <span class="service-card-num">02</span>
+                        <h3 class="service-card-title">Candid Photography</h3>
+                        <p class="service-card-desc">The unscripted, natural moments.</p>
+                        <span class="service-card-arrow">&rarr;</span>
+                    </div>
+                </a>
+                
+                <!-- Service 3 -->
+                <a href="cinematic-video.html" class="service-card fade-up delay-200">
+                    <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=600&q=80" alt="Cinematic Video" class="service-card-bg loading-lazy">
+                    <div class="service-card-content">
+                        <span class="service-card-num">03</span>
+                        <h3 class="service-card-title">Cinematic Video</h3>
+                        <p class="service-card-desc">Your love story in beautiful motion.</p>
+                        <span class="service-card-arrow">&rarr;</span>
+                    </div>
+                </a>
+                
+                <!-- Service 4 -->
+                <a href="pre-wedding.html" class="service-card fade-up delay-300">
+                    <img src="https://images.unsplash.com/photo-1542358994-44df0e104bc1?auto=format&fit=crop&w=600&q=80" alt="Pre-Wedding" class="service-card-bg loading-lazy">
+                    <div class="service-card-content">
+                        <span class="service-card-num">04</span>
+                        <h3 class="service-card-title">Pre-Wedding</h3>
+                        <p class="service-card-desc">Creative portraits before the big day.</p>
+                        <span class="service-card-arrow">&rarr;</span>
+                    </div>
+                </a>
+                
+                <!-- Service 5 -->
+                <a href="post-wedding.html" class="service-card fade-up">
+                    <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=600&q=80" alt="Post-Wedding" class="service-card-bg loading-lazy">
+                    <div class="service-card-content">
+                        <span class="service-card-num">05</span>
+                        <h3 class="service-card-title">Post-Wedding</h3>
+                        <p class="service-card-desc">Relaxed sessions after the rush.</p>
+                        <span class="service-card-arrow">&rarr;</span>
+                    </div>
+                </a>
+                
+                <!-- Service 6 -->
+                <a href="drone.html" class="service-card fade-up delay-100">
+                    <img src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=600&q=80" alt="Drone Coverage" class="service-card-bg loading-lazy">
+                    <div class="service-card-content">
+                        <span class="service-card-num">06</span>
+                        <h3 class="service-card-title">Drone Coverage</h3>
+                        <p class="service-card-desc">Breathtaking aerial perspectives.</p>
+                        <span class="service-card-arrow">&rarr;</span>
+                    </div>
+                </a>
+                
+                <!-- Service 7 -->
+                <a href="led-wall.html" class="service-card fade-up delay-200">
+                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80" alt="LED Wall" class="service-card-bg loading-lazy">
+                    <div class="service-card-content">
+                        <span class="service-card-num">07</span>
+                        <h3 class="service-card-title">LED Wall</h3>
+                        <p class="service-card-desc">Visual experiences for your events.</p>
+                        <span class="service-card-arrow">&rarr;</span>
+                    </div>
+                </a>
+                
+                <!-- Service 8 -->
+                <a href="live-stream.html" class="service-card fade-up delay-300">
+                    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=600&q=80" alt="Live Stream" class="service-card-bg loading-lazy">
+                    <div class="service-card-content">
+                        <span class="service-card-num">08</span>
+                        <h3 class="service-card-title">Live Stream</h3>
+                        <p class="service-card-desc">Share your joy globally in real-time.</p>
+                        <span class="service-card-arrow">&rarr;</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center fade-up text-uppercase" style="font-family: var(--font-body); font-size: 1rem; letter-spacing: 0.2em; margin-bottom: 2rem;">Recent Stories</h2>
+            
+            <div class="portfolio-filters fade-up delay-100">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="wedding">Wedding</button>
+                <button class="filter-btn" data-filter="candid">Candid</button>
+                <button class="filter-btn" data-filter="pre-wedding">Pre-Wedding</button>
+            </div>
+            
+            <div class="grid grid-3 gap-sm" id="portfolio-grid">
+                <!-- Items will be handled via JS for masonry effect, simplified here -->
+                <div class="masonry-item fade-up" data-category="wedding">
+                    <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=600&q=80" alt="Wedding 1" loading="lazy">
+                    <div class="masonry-overlay">
+                        <h4>Arjun & Priya</h4>
+                        <p>Chennai, 2025</p>
+                        <a href="portfolio-detail.html" class="btn-link text-white" style="margin-top: 1rem;">View Story &rarr;</a>
+                    </div>
+                </div>
+                <div class="masonry-item fade-up delay-100" data-category="candid">
+                    <img src="https://images.unsplash.com/photo-1532712938730-4e36c857d15a?auto=format&fit=crop&w=600&q=80" alt="Candid 1" loading="lazy">
+                    <div class="masonry-overlay">
+                        <h4>Rahul & Sneha</h4>
+                        <p>Coimbatore, 2025</p>
+                        <a href="portfolio-detail.html" class="btn-link text-white" style="margin-top: 1rem;">View Story &rarr;</a>
+                    </div>
+                </div>
+                <div class="masonry-item fade-up delay-200" data-category="pre-wedding">
+                    <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=600&q=80" alt="Pre-wedding 1" loading="lazy">
+                    <div class="masonry-overlay">
+                        <h4>Vikram & Aditi</h4>
+                        <p>Ooty, 2025</p>
+                        <a href="portfolio-detail.html" class="btn-link text-white" style="margin-top: 1rem;">View Story &rarr;</a>
+                    </div>
+                </div>
+                <div class="masonry-item fade-up" data-category="wedding">
+                    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=600&q=80" alt="Wedding 2" loading="lazy">
+                    <div class="masonry-overlay">
+                        <h4>Karthik & Meera</h4>
+                        <p>Madurai, 2024</p>
+                        <a href="portfolio-detail.html" class="btn-link text-white" style="margin-top: 1rem;">View Story &rarr;</a>
+                    </div>
+                </div>
+                <div class="masonry-item fade-up delay-100" data-category="candid">
+                    <img src="https://images.unsplash.com/photo-1549416878-b9ca95e1bb39?auto=format&fit=crop&w=600&q=80" alt="Candid 2" loading="lazy">
+                    <div class="masonry-overlay">
+                        <h4>Sanjay & Divya</h4>
+                        <p>Trichy, 2024</p>
+                        <a href="portfolio-detail.html" class="btn-link text-white" style="margin-top: 1rem;">View Story &rarr;</a>
+                    </div>
+                </div>
+                <div class="masonry-item fade-up delay-200" data-category="wedding">
+                    <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=600&q=80" alt="Wedding 3" loading="lazy">
+                    <div class="masonry-overlay">
+                        <h4>Arun & Nithya</h4>
+                        <p>Salem, 2024</p>
+                        <a href="portfolio-detail.html" class="btn-link text-white" style="margin-top: 1rem;">View Story &rarr;</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 3rem;">
+                <a href="portfolio.html" class="btn btn-outline">View All Stories</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="section">
+        <div class="container">
+            <div class="grid grid-4 stats-grid fade-up">
+                <div>
+                    <div class="stat-num counter" data-target="10">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div>
+                    <div class="stat-num counter" data-target="500">0</div>
+                    <div class="stat-label">Weddings</div>
+                </div>
+                <div>
+                    <div class="stat-num counter" data-target="1000">0</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div>
+                    <div class="stat-num counter" data-target="50">0</div>
+                    <div class="stat-label">Locations</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cinematic Films -->
+    <section class="video-section">
+        <img src="https://images.unsplash.com/photo-1605335191060-466fba94eb5a?auto=format&fit=crop&w=1920&q=80" alt="Cinematic Film" class="video-bg loading-lazy">
+        <div class="video-content fade-up">
+            <h2 class="hero-title" style="font-size: clamp(2rem, 5vw, 4rem);">Stories In Motion</h2>
+            <p>Some memories deserve more than a photograph.</p>
+            <div class="play-btn" onclick="openVideoModal('placeholder.mp4')">&#9658;</div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center fade-up text-uppercase" style="font-family: var(--font-body); font-size: 1rem; letter-spacing: 0.2em; margin-bottom: 3rem;">Why Couples Choose Us</h2>
+            
+            <div class="grid grid-3 gap-md">
+                <div class="fade-up">
+                    <span class="text-gold" style="font-family: var(--font-accent); font-size: 2rem;">01.</span>
+                    <h4 style="margin: 1rem 0 0.5rem; font-size: 1.25rem;">Emotion First</h4>
+                    <p>We prioritize capturing genuine feelings over posed perfection.</p>
+                </div>
+                <div class="fade-up delay-100">
+                    <span class="text-gold" style="font-family: var(--font-accent); font-size: 2rem;">02.</span>
+                    <h4 style="margin: 1rem 0 0.5rem; font-size: 1.25rem;">Cinematic Storytelling</h4>
+                    <p>Our films are crafted like movies, with narrative and flow.</p>
+                </div>
+                <div class="fade-up delay-200">
+                    <span class="text-gold" style="font-family: var(--font-accent); font-size: 2rem;">03.</span>
+                    <h4 style="margin: 1rem 0 0.5rem; font-size: 1.25rem;">Experienced Team</h4>
+                    <p>A cohesive unit of professionals who know how to work seamlessly.</p>
+                </div>
+                <div class="fade-up">
+                    <span class="text-gold" style="font-family: var(--font-accent); font-size: 2rem;">04.</span>
+                    <h4 style="margin: 1rem 0 0.5rem; font-size: 1.25rem;">Premium Equipment</h4>
+                    <p>State-of-the-art cameras and lenses for uncompromised quality.</p>
+                </div>
+                <div class="fade-up delay-100">
+                    <span class="text-gold" style="font-family: var(--font-accent); font-size: 2rem;">05.</span>
+                    <h4 style="margin: 1rem 0 0.5rem; font-size: 1.25rem;">Personalized Experience</h4>
+                    <p>We take time to know you, so your photos reflect who you are.</p>
+                </div>
+                <div class="fade-up delay-200">
+                    <span class="text-gold" style="font-family: var(--font-accent); font-size: 2rem;">06.</span>
+                    <h4 style="margin: 1rem 0 0.5rem; font-size: 1.25rem;">Reliable Delivery</h4>
+                    <p>Timely updates and delivery of your memories, guaranteed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" style="background-color: var(--color-white);">
+        <div class="container">
+            <h2 class="text-center fade-up text-uppercase" style="font-family: var(--font-body); font-size: 1rem; letter-spacing: 0.2em; margin-bottom: 3rem;">Love Notes</h2>
+            
+            <div class="testimonial-slider fade-up delay-100">
+                <div class="testimonial-slide active">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Vanavil Photography didn't just take pictures; they captured the soul of our wedding. Every time we look at our album, we relive the day perfectly."</p>
+                    <div class="testimonial-author">Sneha & Rahul</div>
+                    <div style="font-size: 0.75rem; color: var(--color-gray);">Chennai</div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"The cinematic video made us cry all over again. Their team was invisible during the event but captured every single important moment."</p>
+                    <div class="testimonial-author">Priya & Arjun</div>
+                    <div style="font-size: 0.75rem; color: var(--color-gray);">Coimbatore</div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Professional, creative, and incredibly talented. They made us feel so comfortable during our pre-wedding shoot. Highly recommended!"</p>
+                    <div class="testimonial-author">Meera & Karthik</div>
+                    <div style="font-size: 0.75rem; color: var(--color-gray);">Ooty</div>
+                </div>
+                
+                <div class="slider-controls">
+                    <button class="slider-btn prev-btn">&larr;</button>
+                    <button class="slider-btn next-btn">&rarr;</button>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 2rem;">
+                <a href="reviews.html" class="btn-link">Read All Reviews</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram -->
+    <section class="section" style="padding-bottom: 0;">
+        <div class="container" style="text-align: center; margin-bottom: 2rem;">
+            <h2 class="fade-up text-uppercase" style="font-family: var(--font-body); font-size: 1rem; letter-spacing: 0.2em; margin-bottom: 0.5rem;">Follow The Stories</h2>
+            <a href="https://instagram.com/vanavilphotography" target="_blank" class="text-gold fade-up delay-100" style="font-family: var(--font-accent); font-style: italic; font-size: 1.5rem;">@vanavilphotography</a>
+        </div>
+        
+        <div class="insta-grid">
+            <a href="#" class="insta-item"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=400&q=80" alt="Instagram 1" loading="lazy"><div class="insta-overlay"><i class="fab fa-instagram"></i></div></a>
+            <a href="#" class="insta-item"><img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=400&q=80" alt="Instagram 2" loading="lazy"><div class="insta-overlay"><i class="fab fa-instagram"></i></div></a>
+            <a href="#" class="insta-item"><img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=400&q=80" alt="Instagram 3" loading="lazy"><div class="insta-overlay"><i class="fab fa-instagram"></i></div></a>
+            <a href="#" class="insta-item"><img src="https://images.unsplash.com/photo-1542358994-44df0e104bc1?auto=format&fit=crop&w=400&q=80" alt="Instagram 4" loading="lazy"><div class="insta-overlay"><i class="fab fa-instagram"></i></div></a>
+            <a href="#" class="insta-item"><img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=400&q=80" alt="Instagram 5" loading="lazy"><div class="insta-overlay"><i class="fab fa-instagram"></i></div></a>
+            <a href="#" class="insta-item"><img src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=400&q=80" alt="Instagram 6" loading="lazy"><div class="insta-overlay"><i class="fab fa-instagram"></i></div></a>
+        </div>
+    </section>
+
+    <!-- FAQ Preview -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center fade-up text-uppercase" style="font-family: var(--font-body); font-size: 1rem; letter-spacing: 0.2em; margin-bottom: 3rem;">Frequently Asked</h2>
+            
+            <div class="faq-preview fade-up delay-100">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How early should we book?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        We recommend booking at least 6-8 months in advance, especially for dates during peak wedding seasons, to ensure our availability for your special day.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do you travel for weddings?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, we love traveling! We cover weddings across India and internationally. Travel and accommodation expenses are billed additionally for out-of-station events.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do you provide candid and traditional photography?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, our comprehensive packages include both candid photography (capturing natural moments) and traditional photography (for family group shots and rituals).
+                    </div>
+                </div>
+                
+                <div class="text-center" style="margin-top: 2rem;">
+                    <a href="faq.html" class="btn-link">View All FAQs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section section-dark" style="text-align: center; padding: var(--spacing-xl) 0;">
+        <div class="container fade-up">
+            <h2 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1rem;">Your date deserves to be remembered.</h2>
+            <p style="margin-bottom: 2rem; color: #aaa;">Tell us about your celebration and let's create something unforgettable.</p>
+            <div class="flex justify-center gap-sm">
+                <a href="booking.html" class="btn btn-primary" style="background-color: var(--color-white); color: var(--color-dark);">Check Availability</a>
+                <a href="https://wa.me/919876543210?text=Hi%20Vanavil%20Studio,%20I%20would%20like%20to%20enquire%20about%20your%20photography%20services." target="_blank" class="btn btn-outline-white">WhatsApp Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1rem; color: var(--color-white); text-transform: uppercase; letter-spacing: 0.1em;">VANAVIL PHOTOGRAPHY</h3>
+                    <p style="max-width: 300px; margin-bottom: 1.5rem;">Capturing Moments. Creating Memories. Premium wedding photography and cinematic event studio based in India.</p>
+                    <div class="flex gap-sm">
+                        <a href="#" style="color: var(--color-white);"><i class="fab fa-instagram"></i> IG</a>
+                        <a href="#" style="color: var(--color-white);"><i class="fab fa-facebook"></i> FB</a>
+                        <a href="#" style="color: var(--color-white);"><i class="fab fa-youtube"></i> YT</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="films.html">Cinematic Films</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="journal.html">Journal</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="wedding-photography.html">Wedding</a></li>
+                        <li><a href="candid-photography.html">Candid</a></li>
+                        <li><a href="cinematic-video.html">Cinematic</a></li>
+                        <li><a href="pre-wedding.html">Pre-Wedding</a></li>
+                        <li><a href="drone.html">Drone</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:hello@vanavilphotography.com">hello@vanavilphotography.com</a></li>
+                        <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+                        <li><p style="margin-top: 1rem;">123 Studio Lane,<br>Creative District,<br>City, State 12345</p></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Vanavil Photography. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="cancellation-policy.html">Cancellation Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919876543210?text=Hi%20Vanavil%20Studio,%20I%20would%20like%20to%20enquire%20about%20your%20photography%20services." target="_blank" class="whatsapp-float">
+        WA
+    </a>
+
+    <!-- Video Modal -->
+    <div class="modal-overlay" id="video-modal">
+        <div class="modal-content" style="width: 90%; max-width: 1000px; background: #000; position: relative;">
+            <button class="close-modal" style="position: absolute; top: -40px; right: 0; background: none; border: none; color: white; font-size: 2rem; cursor: pointer;">&times;</button>
+            <div style="padding: 56.25% 0 0 0; position: relative;">
+                <!-- Placeholder for video -->
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #222; display: flex; align-items: center; justify-content: center; color: white;">Video Player Placeholder</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script>
+        // Home page specific scripts
+        document.addEventListener('DOMContentLoaded', () => {
+            // Stats Counter
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200;
+
+            const animateCounters = () => {
+                counters.forEach(counter => {
+                    const updateCount = () => {
+                        const target = +counter.getAttribute('data-target');
+                        const count = +counter.innerText;
+                        const inc = target / speed;
+
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count + inc);
+                            setTimeout(updateCount, 1);
+                        } else {
+                            counter.innerText = target + (target > 50 ? '+' : '');
+                        }
+                    };
+                    updateCount();
+                });
+            };
+            
+            // Trigger counter when in view
+            const statsSection = document.querySelector('.stats-grid');
+            if (statsSection) {
+                const observer = new IntersectionObserver((entries) => {
+                    if (entries[0].isIntersecting) {
+                        animateCounters();
+                        observer.disconnect();
+                    }
+                });
+                observer.observe(statsSection);
+            }
+
+            // Testimonial Slider
+            const slides = document.querySelectorAll('.testimonial-slide');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            let currentSlide = 0;
+
+            function showSlide(n) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                currentSlide = (n + slides.length) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+
+            if (prevBtn && nextBtn) {
+                prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+                nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+            }
+
+            // FAQ Preview Accordion
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    faqItems.forEach(faq => faq.classList.remove('active'));
+                    if (!isActive) item.classList.add('active');
+                });
+            });
+
+            // Parallax Hero
+            const heroBg = document.getElementById('hero-bg');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY < window.innerHeight) {
+                    heroBg.style.transform = `scale(1.05) translateY(${window.scrollY * 0.3}px)`;
+                }
+            });
+        });
+        
+        function openVideoModal(url) {
+            const modal = document.getElementById('video-modal');
+            modal.classList.add('active');
+            
+            modal.querySelector('.close-modal').onclick = () => {
+                modal.classList.remove('active');
+            };
+        }
+    </script>
+</body>
+</html>

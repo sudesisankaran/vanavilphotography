@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | VANAVIL PHOTOGRAPHY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            background: none;
+            border: none;
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-gray);
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .filter-btn.active, .filter-btn:hover { color: var(--color-dark); }
+        
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap: var(--spacing-sm);
+        }
+        .masonry-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            aspect-ratio: 3/4;
+            display: block;
+        }
+        .masonry-item.wide { aspect-ratio: 4/3; }
+        .masonry-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        .masonry-item:hover img { transform: scale(1.05); }
+        .masonry-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            color: var(--color-white);
+            text-align: center;
+            padding: 1rem;
+        }
+        .masonry-item:hover .masonry-overlay { opacity: 1; }
+        .hidden-item { display: none !important; }
+        
+        /* Lightbox */
+        .lightbox-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        .lightbox-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .lightbox-img {
+            max-width: 90%;
+            max-height: 90vh;
+            object-fit: contain;
+            user-select: none;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: white;
+            font-size: 3rem;
+            cursor: pointer;
+            padding: 1rem;
+        }
+        .lightbox-prev { left: 1rem; }
+        .lightbox-next { right: 1rem; }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo text-reveal-wrapper"><span class="text-reveal">VANAVIL PHOTOGRAPHY</span></a>
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="portfolio.html" class="nav-link active">Portfolio</a>
+                <a href="films.html" class="nav-link">Films</a>
+                <a href="packages.html" class="nav-link">Packages</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <a href="booking.html" class="btn-nav">Check Availability</a>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </header>
+    
+    <div class="page-hero">
+        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1920&q=80" alt="Portfolio" class="page-hero-bg">
+        <div class="page-hero-content">
+            <h1 class="page-hero-title fade-up">Our Work</h1>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div class="portfolio-filters fade-up">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="wedding">Wedding</button>
+                <button class="filter-btn" data-filter="candid">Candid</button>
+                <button class="filter-btn" data-filter="pre-wedding">Pre-Wedding</button>
+                <button class="filter-btn" data-filter="drone">Drone</button>
+            </div>
+            
+            <div class="masonry-grid" id="portfolio-grid">
+                <!-- JS will generate items -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox-overlay" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close">&times;</button>
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev">&lsaquo;</button>
+        <img src="" alt="Lightbox Image" class="lightbox-img" id="lightbox-img">
+        <button class="lightbox-nav lightbox-next" id="lightbox-next">&rsaquo;</button>
+    </div>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2026 Vanavil Photography.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const portfolioData = [
+                { img: 'https://images.unsplash.com/photo-1606800052052-a08af7148866', cat: 'wedding', title: 'Arjun & Priya', class: '' },
+                { img: 'https://images.unsplash.com/photo-1532712938730-4e36c857d15a', cat: 'candid', title: 'Rahul & Sneha', class: 'wide' },
+                { img: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a', cat: 'pre-wedding', title: 'Vikram & Aditi', class: '' },
+                { img: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed', cat: 'wedding', title: 'Karthik & Meera', class: 'wide' },
+                { img: 'https://images.unsplash.com/photo-1549416878-b9ca95e1bb39', cat: 'candid', title: 'Sanjay & Divya', class: '' },
+                { img: 'https://images.unsplash.com/photo-1508614589041-895b88991e3e', cat: 'drone', title: 'Destination Arial', class: 'wide' }
+            ];
+
+            const grid = document.getElementById('portfolio-grid');
+            
+            // Populate
+            portfolioData.forEach((item, index) => {
+                const el = document.createElement('a');
+                el.href = 'portfolio-detail.html';
+                el.className = `masonry-item ${item.class} fade-up`;
+                el.dataset.category = item.cat;
+                el.dataset.index = index;
+                
+                el.innerHTML = `
+                    <img src="${item.img}?auto=format&fit=crop&w=800&q=80" alt="${item.title}" loading="lazy">
+                    <div class="masonry-overlay">
+                        <h4>${item.title}</h4>
+                        <p class="text-uppercase" style="font-size:0.75rem; margin-top:0.5rem">${item.cat}</p>
+                    </div>
+                `;
+                
+                // Lightbox logic
+                el.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openLightbox(index);
+                });
+                
+                grid.appendChild(el);
+            });
+            
+            // Filtering
+            const filters = document.querySelectorAll('.filter-btn');
+            const items = document.querySelectorAll('.masonry-item');
+            
+            filters.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filters.forEach(f => f.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    const filter = btn.dataset.filter;
+                    items.forEach(item => {
+                        if (filter === 'all' || item.dataset.category === filter) {
+                            item.classList.remove('hidden-item');
+                        } else {
+                            item.classList.add('hidden-item');
+                        }
+                    });
+                });
+            });
+
+            // Lightbox
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            let currentIdx = 0;
+
+            function openLightbox(index) {
+                currentIdx = index;
+                lightboxImg.src = `${portfolioData[currentIdx].img}?auto=format&fit=crop&w=1920&q=90`;
+                lightbox.classList.add('active');
+            }
+
+            document.getElementById('lightbox-close').addEventListener('click', () => {
+                lightbox.classList.remove('active');
+            });
+            
+            document.getElementById('lightbox-prev').addEventListener('click', () => {
+                currentIdx = (currentIdx - 1 + portfolioData.length) % portfolioData.length;
+                openLightbox(currentIdx);
+            });
+
+            document.getElementById('lightbox-next').addEventListener('click', () => {
+                currentIdx = (currentIdx + 1) % portfolioData.length;
+                openLightbox(currentIdx);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Films | VANAVIL PHOTOGRAPHY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .film-card {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 2rem;
+        }
+        .film-thumb {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        .film-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+        .film-card:hover .film-overlay {
+            background: rgba(0,0,0,0.6);
+        }
+        .film-card:hover .film-thumb {
+            transform: scale(1.05);
+        }
+        .film-info {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            color: white;
+            z-index: 10;
+        }
+        .film-duration {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            color: white;
+            font-size: 0.75rem;
+            background: rgba(0,0,0,0.6);
+            padding: 0.2rem 0.5rem;
+            border-radius: 2px;
+        }
+        .play-btn-small {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid white;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .film-card:hover .play-btn-small {
+            transform: scale(1.1);
+            background: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">VANAVIL PHOTOGRAPHY</a>
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="films.html" class="nav-link active">Films</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <a href="booking.html" class="btn-nav">Check Availability</a>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </header>
+
+    <div class="page-hero">
+        <img src="https://images.unsplash.com/photo-1536640712-4d4c36ef0e42?auto=format&fit=crop&w=1920&q=80" alt="Films" class="page-hero-bg">
+        <div class="page-hero-content">
+            <h1 class="page-hero-title fade-up">Cinematic Films</h1>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div class="grid grid-2 gap-md">
+                
+                <div class="film-card fade-up" onclick="openVideoModal('placeholder1.mp4')">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80" class="film-thumb">
+                    <div class="film-overlay">
+                        <div class="play-btn-small">&#9658;</div>
+                    </div>
+                    <div class="film-info">
+                        <h3>Arjun & Priya - Highlight</h3>
+                        <p style="margin:0; font-size: 0.875rem;">Chennai</p>
+                    </div>
+                    <div class="film-duration">4:32</div>
+                </div>
+
+                <div class="film-card fade-up delay-100" onclick="openVideoModal('placeholder2.mp4')">
+                    <img src="https://images.unsplash.com/photo-1542358994-44df0e104bc1?auto=format&fit=crop&w=800&q=80" class="film-thumb">
+                    <div class="film-overlay">
+                        <div class="play-btn-small">&#9658;</div>
+                    </div>
+                    <div class="film-info">
+                        <h3>Vikram & Aditi - Pre Wedding</h3>
+                        <p style="margin:0; font-size: 0.875rem;">Ooty</p>
+                    </div>
+                    <div class="film-duration">2:15</div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Modal -->
+    <div class="modal-overlay" id="video-modal">
+        <div class="modal-content" style="width: 90%; max-width: 1000px; background: #000; position: relative;">
+            <button class="close-modal" id="video-close" style="position: absolute; top: -40px; right: 0; background: none; border: none; color: white; font-size: 2rem; cursor: pointer;">&times;</button>
+            <div style="padding: 56.25% 0 0 0; position: relative;">
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #222; display: flex; align-items: center; justify-content: center; color: white;">Video Player</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script>
+        function openVideoModal(url) {
+            const modal = document.getElementById('video-modal');
+            modal.classList.add('active');
+        }
+        document.getElementById('video-close').onclick = () => {
+            document.getElementById('video-modal').classList.remove('active');
+        }
+    </script>
+</body>
+</html>

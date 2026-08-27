@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | VANAVIL PHOTOGRAPHY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .service-list-item {
+            padding: var(--spacing-lg) 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        @media(min-width: 768px) {
+            .service-list-item { grid-template-columns: 1fr 1fr; gap: 4rem; }
+            .service-list-item:nth-child(even) .service-img-col { order: 2; }
+            .service-list-item:nth-child(even) .service-text-col { order: 1; }
+        }
+        .service-list-img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo text-reveal-wrapper"><span class="text-reveal">VANAVIL PHOTOGRAPHY</span></a>
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link active">Services</a>
+                <a href="portfolio.html" class="nav-link">Portfolio</a>
+                <a href="films.html" class="nav-link">Films</a>
+                <a href="packages.html" class="nav-link">Packages</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <a href="booking.html" class="btn-nav">Check Availability</a>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </header>
+    
+    <div class="mobile-menu" id="mobile-menu">
+        <nav class="mobile-nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="services.html" class="nav-link active">Services</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+    </div>
+
+    <div class="page-hero">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80" alt="Services" class="page-hero-bg">
+        <div class="page-hero-content">
+            <h1 class="page-hero-title fade-up">EVERY MOMENT.<br>EVERY FRAME.</h1>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            
+            <div class="service-list-item fade-up">
+                <div class="service-img-col hover-zoom">
+                    <a href="wedding-photography.html"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Wedding" class="service-list-img"></a>
+                </div>
+                <div class="service-text-col">
+                    <h2>Wedding Photography</h2>
+                    <p>Comprehensive coverage of your special day, combining traditional portraits with emotional, storytelling captures.</p>
+                    <ul style="list-style:none; margin-bottom: 2rem; color: var(--color-gray);">
+                        <li style="margin-bottom: 0.5rem;">✓ Couple Portraits</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Family Groupings</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Ritual Coverage</li>
+                    </ul>
+                    <a href="wedding-photography.html" class="btn-link">Explore &rarr;</a>
+                </div>
+            </div>
+
+            <div class="service-list-item fade-up">
+                <div class="service-img-col hover-zoom">
+                    <a href="candid-photography.html"><img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=800&q=80" alt="Candid" class="service-list-img"></a>
+                </div>
+                <div class="service-text-col">
+                    <h2>Candid Photography</h2>
+                    <p>The unguarded smiles, the quiet tears, and the joyous laughter. We capture the true essence of your celebration without intruding.</p>
+                    <a href="candid-photography.html" class="btn-link">Explore &rarr;</a>
+                </div>
+            </div>
+
+            <div class="service-list-item fade-up">
+                <div class="service-img-col hover-zoom">
+                    <a href="cinematic-video.html"><img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=800&q=80" alt="Cinematic" class="service-list-img"></a>
+                </div>
+                <div class="service-text-col">
+                    <h2>Cinematic Video</h2>
+                    <p>Beautifully crafted films that tell your love story. Utilizing cinema-grade equipment to create a timeless movie of your day.</p>
+                    <a href="cinematic-video.html" class="btn-link">Explore &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="service-list-item fade-up">
+                <div class="service-img-col hover-zoom">
+                    <a href="pre-wedding.html"><img src="https://images.unsplash.com/photo-1542358994-44df0e104bc1?auto=format&fit=crop&w=800&q=80" alt="Pre-Wedding" class="service-list-img"></a>
+                </div>
+                <div class="service-text-col">
+                    <h2>Pre-Wedding</h2>
+                    <p>A relaxed, creative session before the rush of the wedding day to capture your connection in beautiful locations.</p>
+                    <a href="pre-wedding.html" class="btn-link">Explore &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="service-list-item fade-up">
+                <div class="service-img-col hover-zoom">
+                    <a href="post-wedding.html"><img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=800&q=80" alt="Post-Wedding" class="service-list-img"></a>
+                </div>
+                <div class="service-text-col">
+                    <h2>Post-Wedding</h2>
+                    <p>Continue the celebration with a stunning destination shoot after the wedding stress has melted away.</p>
+                    <a href="post-wedding.html" class="btn-link">Explore &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="service-list-item fade-up">
+                <div class="service-img-col hover-zoom">
+                    <a href="drone.html"><img src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=800&q=80" alt="Drone" class="service-list-img"></a>
+                </div>
+                <div class="service-text-col">
+                    <h2>Drone Coverage</h2>
+                    <p>Elevate your story with sweeping aerial views of your venue and dramatic couple portraits from the sky.</p>
+                    <a href="drone.html" class="btn-link">Explore &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="service-list-item fade-up">
+                <div class="service-img-col hover-zoom">
+                    <a href="led-wall.html"><img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80" alt="LED Wall" class="service-list-img"></a>
+                </div>
+                <div class="service-text-col">
+                    <h2>LED Wall</h2>
+                    <p>Transform your reception venue with stunning custom visuals, live feeds, and motion graphics on massive LED screens.</p>
+                    <a href="led-wall.html" class="btn-link">Explore &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="service-list-item fade-up" style="border-bottom:none;">
+                <div class="service-img-col hover-zoom">
+                    <a href="live-stream.html"><img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80" alt="Live Stream" class="service-list-img"></a>
+                </div>
+                <div class="service-text-col">
+                    <h2>Live Stream</h2>
+                    <p>High-quality, multi-camera broadcasting so friends and family across the globe can be part of your moment in real-time.</p>
+                    <a href="live-stream.html" class="btn-link">Explore &rarr;</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Vanavil Photography.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/animations.js" defer></script>
+</body>
+</html>

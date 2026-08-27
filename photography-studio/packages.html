@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packages | VANAVIL PHOTOGRAPHY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .package-card {
+            border: 1px solid rgba(0,0,0,0.1);
+            padding: 3rem 2rem;
+            text-align: center;
+            background: white;
+            transition: all 0.3s ease;
+        }
+        .package-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transform: translateY(-10px);
+        }
+        .package-title {
+            font-family: var(--font-accent);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .package-divider {
+            width: 40px;
+            height: 2px;
+            background: var(--color-gold);
+            margin: 1.5rem auto;
+        }
+        .package-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            color: var(--color-gray);
+        }
+        .package-features li {
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+        }
+        .package-card.highlight {
+            background: var(--color-dark);
+            color: white;
+        }
+        .package-card.highlight .package-features {
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">VANAVIL PHOTOGRAPHY</a>
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="packages.html" class="nav-link active">Packages</a>
+                <a href="booking.html" class="nav-link">Contact</a>
+            </nav>
+            <a href="booking.html" class="btn-nav">Check Availability</a>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </header>
+
+    <div class="page-hero">
+        <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1920&q=80" alt="Packages" class="page-hero-bg">
+        <div class="page-hero-content">
+            <h1 class="page-hero-title fade-up">Investment</h1>
+            <p class="fade-up delay-100" style="margin-top: 1rem; font-size: 1.125rem;">Curated collections for your special day.</p>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div class="grid grid-4 gap-sm">
+                
+                <div class="package-card fade-up">
+                    <h3 class="package-title">Essential</h3>
+                    <div class="package-divider"></div>
+                    <ul class="package-features">
+                        <li>Wedding Photography</li>
+                        <li>1 Photographer</li>
+                        <li>Digital Gallery</li>
+                        <li>Standard Editing</li>
+                    </ul>
+                    <a href="booking.html" class="btn btn-outline" style="width:100%;">Get Custom Quote</a>
+                </div>
+
+                <div class="package-card fade-up delay-100">
+                    <h3 class="package-title">Signature</h3>
+                    <div class="package-divider"></div>
+                    <ul class="package-features">
+                        <li>Wedding Photography</li>
+                        <li>Candid Photography</li>
+                        <li>2 Photographers</li>
+                        <li>Cinematic Highlights</li>
+                        <li>Premium Editing</li>
+                    </ul>
+                    <a href="booking.html" class="btn btn-outline" style="width:100%;">Get Custom Quote</a>
+                </div>
+
+                <div class="package-card highlight fade-up delay-200">
+                    <h3 class="package-title">Luxury</h3>
+                    <div class="package-divider"></div>
+                    <ul class="package-features">
+                        <li>Wedding & Candid</li>
+                        <li>Cinematic Film</li>
+                        <li>Drone Coverage</li>
+                        <li>2 Photographers</li>
+                        <li>2 Cinematographers</li>
+                        <li>Premium Album</li>
+                    </ul>
+                    <a href="booking.html" class="btn btn-outline-white" style="width:100%;">Get Custom Quote</a>
+                </div>
+
+                <div class="package-card fade-up delay-300">
+                    <h3 class="package-title">Custom</h3>
+                    <div class="package-divider"></div>
+                    <ul class="package-features">
+                        <li>Choose your services</li>
+                        <li>Flexible hours</li>
+                        <li>A la carte add-ons</li>
+                        <li>Destination coverage</li>
+                        <li>Tailored experience</li>
+                    </ul>
+                    <a href="booking.html" class="btn btn-outline" style="width:100%;">Get Custom Quote</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2026 Vanavil Photography.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/animations.js" defer></script>
+</body>
+</html>

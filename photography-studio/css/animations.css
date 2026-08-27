@@ -1,0 +1,159 @@
+/* ==========================================================================
+   Animations & Transitions
+   ========================================================================== */
+
+/* Fade Up */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fade In */
+.fade-in {
+  opacity: 0;
+  transition: opacity 1.5s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
+/* Image Reveal */
+.img-reveal {
+  position: relative;
+  overflow: hidden;
+}
+
+.img-reveal::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-off-white);
+  transform-origin: left;
+  transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
+  z-index: 1;
+}
+
+.section-dark .img-reveal::after {
+  background-color: var(--color-dark);
+}
+
+.img-reveal.visible::after {
+  transform: scaleX(0);
+}
+
+.img-reveal img {
+  transform: scale(1.1);
+  transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.img-reveal.visible img {
+  transform: scale(1);
+}
+
+/* Text Reveal */
+.text-reveal-wrapper {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.text-reveal {
+  display: inline-block;
+  transform: translateY(100%);
+  transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.text-reveal.visible {
+  transform: translateY(0);
+}
+
+/* Staggered Delay */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+
+/* Image Hover Zoom */
+.hover-zoom {
+  overflow: hidden;
+}
+
+.hover-zoom img {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-zoom:hover img {
+  transform: scale(1.05);
+}
+
+/* Modal Animation */
+.modal-overlay {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  transform: translateY(20px) scale(0.98);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-overlay.active .modal-content {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* Custom Cursor */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-gold);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+  display: none;
+}
+
+.cursor-outline {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--color-gold);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s;
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  body:not(.no-custom-cursor) .cursor-dot,
+  body:not(.no-custom-cursor) .cursor-outline {
+    display: block;
+  }
+}
