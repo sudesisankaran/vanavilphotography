@@ -25,22 +25,26 @@
             color: var(--color-gray);
         }
         .gallery-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
+            column-count: 1;
+            column-gap: 1rem;
         }
         @media (min-width: 768px) {
             .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
+                column-count: 2;
+            }
+        }
+        @media (min-width: 1024px) {
+            .gallery-grid {
+                column-count: 3;
             }
         }
         .gallery-grid img {
             width: 100%;
             height: auto;
             display: block;
-        }
-        .gallery-grid .wide {
-            grid-column: 1 / -1;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            break-inside: avoid;
         }
     </style>
 </head>
@@ -59,26 +63,37 @@
     </header>
 
     <div class="page-hero">
-        <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1920&q=80" alt="Arjun and Priya" class="page-hero-bg">
+        <img src="images/wedding-20260904T101936Z-1-001/wedding/0M5A5039.webp" alt="Beautiful Wedding Celebration" class="page-hero-bg" fetchpriority="high">
     </div>
 
     <section class="section">
         <div class="container">
             <div class="detail-header fade-up">
-                <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1rem;">Arjun & Priya</h1>
+                <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1rem;">Beautiful Wedding Celebration</h1>
                 <div class="detail-meta">
-                    <span>Chennai</span>
-                    <span>2025</span>
+                    <span>2026</span>
                     <span>Wedding</span>
                 </div>
-                <p>A beautiful celebration of love set against the backdrop of traditional Chennai architecture. We focused on capturing the raw emotions and the vibrant colors that made this day so special.</p>
+                <p>A beautiful celebration of love. We focused on capturing the raw emotions and the vibrant colors that made this day so special.</p>
             </div>
             
             <div class="gallery-grid">
-                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80" alt="Detail 1" class="wide fade-up">
-                <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=800&q=80" alt="Detail 2" class="fade-up">
-                <img src="https://images.unsplash.com/photo-1549416878-b9ca95e1bb39?auto=format&fit=crop&w=800&q=80" alt="Detail 3" class="fade-up">
-                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80" alt="Detail 4" class="wide fade-up">
+                <img src="images/wedding-20260904T101936Z-1-001/wedding/0M5A5039.webp" alt="Detail 1" class="wide fade-up" loading="lazy" decoding="async">
+                <img src="images/wedding-20260904T101936Z-1-001/wedding/0M5A5338.webp" alt="Detail 2" class="fade-up" loading="lazy" decoding="async">
+                <img src="images/wedding-20260904T101936Z-1-001/wedding/0M5A5345.webp" alt="Detail 3" class="fade-up" loading="lazy" decoding="async">
+                <img src="images/wedding-20260904T101936Z-1-001/wedding/0M5A5352.webp" alt="Detail 4" class="wide fade-up" loading="lazy" decoding="async">
+                <img src="images/wedding-20260904T101936Z-1-001/wedding/0M5A5496.webp" alt="Detail 5" class="fade-up" loading="lazy" decoding="async">
+                <img src="images/wedding-20260904T101936Z-1-001/wedding/0M5A9624.webp" alt="Detail 6" class="fade-up" loading="lazy" decoding="async">
+                <img src="images/wedding-20260904T101936Z-1-001/wedding/0M5A9681.webp" alt="Detail 7" class="wide fade-up" loading="lazy" decoding="async">
+                <img src="images/wedding-20260904T101936Z-1-001/wedding/0M5A9715.webp" alt="Detail 8" class="fade-up" loading="lazy" decoding="async">
+                <img src="images/wedding-20260904T101936Z-1-001/wedding/0M5A9718.webp" alt="Detail 9" class="fade-up" loading="lazy" decoding="async">
+                <img src="images/wedding-20260904T101936Z-1-001/wedding/0M5A9724.webp" alt="Detail 10" class="wide fade-up" loading="lazy" decoding="async">
+                <img src="images/wedding-20260904T101936Z-1-001/wedding/180A4910.webp" alt="Detail 11" class="fade-up" loading="lazy" decoding="async">
+                <img src="images/wedding-20260904T101936Z-1-001/wedding/180A4922.webp" alt="Detail 12" class="fade-up" loading="lazy" decoding="async">
+                <img src="images/wedding-20260904T101936Z-1-001/wedding/180A4934.webp" alt="Detail 13" class="wide fade-up" loading="lazy" decoding="async">
+                <img src="images/wedding-20260904T101936Z-1-001/wedding/180A4947.webp" alt="Detail 14" class="fade-up" loading="lazy" decoding="async">
+                <img src="images/wedding-20260904T101936Z-1-001/wedding/180A4951.webp" alt="Detail 15" class="fade-up" loading="lazy" decoding="async">
+                <img src="images/wedding-20260904T101936Z-1-001/wedding/180A4957.webp" alt="Detail 16" class="wide fade-up" loading="lazy" decoding="async">
             </div>
         </div>
     </section>

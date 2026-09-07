@@ -139,7 +139,7 @@
     </header>
     
     <div class="page-hero">
-        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1920&q=80" alt="Portfolio" class="page-hero-bg">
+        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1920&q=80" alt="Portfolio" class="page-hero-bg" fetchpriority="high">
         <div class="page-hero-content">
             <h1 class="page-hero-title fade-up">Our Work</h1>
         </div>
@@ -180,7 +180,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const portfolioData = [
-                { img: 'https://images.unsplash.com/photo-1606800052052-a08af7148866', cat: 'wedding', title: 'Arjun & Priya', class: '' },
+                { img: 'images/wedding-20260904T101936Z-1-001/wedding/0M5A5039.webp', cat: 'wedding', title: 'Beautiful Wedding Celebration', class: '' },
                 { img: 'https://images.unsplash.com/photo-1532712938730-4e36c857d15a', cat: 'candid', title: 'Rahul & Sneha', class: 'wide' },
                 { img: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a', cat: 'pre-wedding', title: 'Vikram & Aditi', class: '' },
                 { img: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed', cat: 'wedding', title: 'Karthik & Meera', class: 'wide' },
@@ -198,8 +198,9 @@
                 el.dataset.category = item.cat;
                 el.dataset.index = index;
                 
+                const imgSrc = item.img.includes('unsplash.com') ? `${item.img}?auto=format&fit=crop&w=800&q=80` : item.img;
                 el.innerHTML = `
-                    <img src="${item.img}?auto=format&fit=crop&w=800&q=80" alt="${item.title}" loading="lazy">
+                    <img src="${imgSrc}" alt="${item.title}" loading="lazy" decoding="async">
                     <div class="masonry-overlay">
                         <h4>${item.title}</h4>
                         <p class="text-uppercase" style="font-size:0.75rem; margin-top:0.5rem">${item.cat}</p>
@@ -242,7 +243,8 @@
 
             function openLightbox(index) {
                 currentIdx = index;
-                lightboxImg.src = `${portfolioData[currentIdx].img}?auto=format&fit=crop&w=1920&q=90`;
+                const lightSrc = portfolioData[currentIdx].img.includes('unsplash.com') ? `${portfolioData[currentIdx].img}?auto=format&fit=crop&w=1920&q=90` : portfolioData[currentIdx].img;
+                lightboxImg.src = lightSrc;
                 lightbox.classList.add('active');
             }
 
