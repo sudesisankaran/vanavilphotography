@@ -4,6 +4,31 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     
+    // Video Preloader Logic
+    const preloader = document.getElementById('video-preloader');
+    const preloaderVideo = document.getElementById('preloader-video');
+    
+    if (preloader && preloaderVideo) {
+        // Prevent scrolling while preloader is active
+        document.body.style.overflow = 'hidden';
+        
+        const removePreloader = () => {
+            if (!preloader.classList.contains('fade-out')) {
+                preloader.classList.add('fade-out');
+                document.body.style.overflow = '';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 800);
+            }
+        };
+
+        // When video ends, remove preloader
+        preloaderVideo.addEventListener('ended', removePreloader);
+        
+        // Fallback: If video fails or takes too long (e.g. 8 seconds)
+        setTimeout(removePreloader, 8000);
+    }
+    
     // Header Scroll Effect
     const header = document.getElementById('header');
     

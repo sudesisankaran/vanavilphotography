@@ -27,6 +27,11 @@
   .container {
     padding: 0 var(--spacing-sm);
   }
+  
+  .logo img {
+    width: 260px;
+    height: 90px;
+  }
 }
 
 /* Image Helpers */
