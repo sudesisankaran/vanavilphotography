@@ -58,6 +58,17 @@
             overflow: hidden;
             padding-top: var(--header-height);
             padding-bottom: 6rem;
+            background-color: var(--color-black);
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.45);
+            z-index: 2;
         }
         .hero-bg {
             position: absolute;
@@ -67,8 +78,8 @@
             height: 100%;
             object-fit: cover;
             z-index: 1;
-            filter: brightness(0.6);
-            transform: scale(1.05);
+            /* Scale up to crop out built-in black bars from the video */
+            transform: scale(1.35);
         }
         .hero-content {
             position: relative;
@@ -88,14 +99,16 @@
             font-size: clamp(3rem, 8vw, 6rem);
             margin-bottom: var(--spacing-md);
             line-height: 1.1;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.4);
         }
         .hero-desc {
             font-size: clamp(1rem, 1.5vw, 1.25rem);
-            color: rgba(255,255,255,0.8);
+            color: rgba(255,255,255,0.9);
             margin-bottom: var(--spacing-lg);
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
         }
         .hero-actions {
             display: flex;
@@ -466,6 +479,9 @@
             padding-top: 1rem;
         }
     </style>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/005%20copy.png">
 </head>
 <body>
 
@@ -485,8 +501,6 @@
                 <a href="about.html" class="nav-link">About</a>
                 <a href="services.html" class="nav-link">Services</a>
                 <a href="portfolio.html" class="nav-link">Portfolio</a>
-                <a href="films.html" class="nav-link">Films</a>
-                <a href="packages.html" class="nav-link">Packages</a>
                 <a href="contact.html" class="nav-link">Contact</a>
             </nav>
             
@@ -507,8 +521,6 @@
             <a href="about.html" class="nav-link">About</a>
             <a href="services.html" class="nav-link">Services</a>
             <a href="portfolio.html" class="nav-link">Portfolio</a>
-            <a href="films.html" class="nav-link">Films</a>
-            <a href="packages.html" class="nav-link">Packages</a>
             <a href="contact.html" class="nav-link">Contact</a>
             <a href="booking.html" class="btn btn-primary" style="margin-top: 2rem;">Check Your Date</a>
         </nav>
@@ -516,7 +528,7 @@
 
     <!-- Hero -->
     <section class="hero">
-        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80" alt="Wedding Couple" class="hero-bg" id="hero-bg" fetchpriority="high">
+        <video src="videos/Vanavil%20Teaser%20C.mp4" class="hero-bg" id="hero-bg" autoplay loop muted playsinline fetchpriority="high"></video>
         <div class="hero-content">
             <span class="hero-subtitle fade-up delay-100">Premium Wedding Photography</span>
             <h1 class="hero-title fade-up delay-200">
@@ -735,16 +747,6 @@
         </div>
     </section>
 
-    <!-- Cinematic Films -->
-    <section class="video-section">
-        <img src="https://images.unsplash.com/photo-1605335191060-466fba94eb5a?auto=format&fit=crop&w=1920&q=80" alt="Cinematic Film" class="video-bg loading-lazy">
-        <div class="video-content fade-up">
-            <h2 class="hero-title" style="font-size: clamp(2rem, 5vw, 4rem);">Stories In Motion</h2>
-            <p>Some memories deserve more than a photograph.</p>
-            <div class="play-btn" onclick="openVideoModal('placeholder.mp4')">&#9658;</div>
-        </div>
-    </section>
-
     <!-- Why Us -->
     <section class="section">
         <div class="container">
@@ -912,8 +914,6 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="films.html">Cinematic Films</a></li>
-                        <li><a href="packages.html">Packages</a></li>
                         <li><a href="journal.html">Journal</a></li>
                     </ul>
                 </div>
