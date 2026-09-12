@@ -20,6 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
+                    
+                    if (entry.target.classList.contains('counter')) {
+                        animateCounter(entry.target);
+                    }
+                    
                     // Unobserve after animating once
                     observer.unobserve(entry.target);
                 }
@@ -29,9 +34,37 @@ document.addEventListener('DOMContentLoaded', () => {
         // Elements to animate
         const fadeUpElements = document.querySelectorAll('.fade-up');
         const revealElements = document.querySelectorAll('.img-reveal, .text-reveal');
+        const counterElements = document.querySelectorAll('.counter');
         
         fadeUpElements.forEach(el => animationObserver.observe(el));
         revealElements.forEach(el => animationObserver.observe(el));
+        counterElements.forEach(el => {
+            el.dataset.animated = 'false';
+            animationObserver.observe(el);
+        });
+        
+        // Counter Animation Logic
+        function animateCounter(element) {
+            if (element.dataset.animated === 'true') return;
+            element.dataset.animated = 'true';
+            
+            const target = +element.getAttribute('data-target');
+            const duration = 2000; // 2 seconds
+            const step = Math.max(1, Math.ceil(target / (duration / 16))); // 60fps
+            
+            let current = 0;
+            const updateCounter = () => {
+                current += step;
+                if (current < target) {
+                    element.innerText = current;
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.innerText = target + (target > 100 ? '+' : ''); // Add '+' to large numbers
+                }
+            };
+            
+            updateCounter();
+        }
         
         // Custom Cursor (Desktop only)
         if (window.innerWidth >= 1024) {
