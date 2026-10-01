@@ -14,26 +14,6 @@
   .hidden-desktop { display: none !important; }
 }
 
-/* Typography Responsive */
-@media (max-width: 767px) {
-  .section {
-    padding: var(--spacing-lg) 0;
-  }
-  
-  h1 { font-size: 2.5rem; }
-  h2 { font-size: 2rem; }
-  h3 { font-size: 1.5rem; }
-  
-  .container {
-    padding: 0 var(--spacing-sm);
-  }
-  
-  .logo img {
-    width: 260px;
-    height: 90px;
-  }
-}
-
 /* Image Helpers */
 .img-fluid {
   max-width: 100%;
@@ -67,4 +47,695 @@
 @media (max-width: 767px) {
   .order-first-mobile { order: -1; }
   .order-last-mobile { order: 99; }
+}
+
+
+/* ==========================================================================
+   MOBILE FIRST — max-width: 480px (Small phones)
+   ========================================================================== */
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+
+  .section {
+    padding: var(--spacing-lg) 0;
+  }
+
+  /* Header */
+  .header {
+    height: 80px;
+  }
+
+  .header-container {
+    padding: 0 var(--spacing-sm);
+  }
+
+  .logo img {
+    width: 180px;
+    height: 60px;
+  }
+
+  /* Hero */
+  .hero {
+    padding-top: 80px;
+    padding-bottom: 3rem;
+    min-height: 100svh;
+  }
+
+  .hero-content {
+    padding: 0 var(--spacing-sm);
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 10vw, 3rem) !important;
+  }
+
+  .hero-subtitle {
+    font-size: 0.7rem !important;
+    letter-spacing: 0.15em !important;
+  }
+
+  .hero-desc {
+    font-size: 0.9rem !important;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    max-width: 280px;
+    padding: 0.875rem 1.5rem;
+    font-size: 0.75rem;
+  }
+
+  .hero-scroll {
+    font-size: 0.625rem;
+    bottom: 1rem;
+  }
+
+  /* Typography */
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.25rem; }
+  h4 { font-size: 1.1rem; }
+
+  /* Service Cards */
+  .service-card {
+    height: 280px;
+  }
+
+  .service-card-title {
+    font-size: 1.2rem !important;
+  }
+
+  .service-card-num {
+    font-size: 0.75rem !important;
+  }
+
+  /* Stats */
+  .stat-num {
+    font-size: 2.5rem !important;
+  }
+
+  .stat-label {
+    font-size: 0.7rem !important;
+  }
+
+  .stats-grid {
+    padding: var(--spacing-md) 0 !important;
+  }
+
+  /* Buttons */
+  .btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.75rem;
+  }
+
+  .btn-link {
+    font-size: 0.75rem;
+  }
+
+  /* Page Hero */
+  .page-hero {
+    height: 40vh;
+    min-height: 250px;
+  }
+
+  .page-hero-title {
+    font-size: 1.75rem !important;
+  }
+
+  .page-hero-content {
+    padding: 0 var(--spacing-sm);
+  }
+
+  /* Video Section */
+  .video-section {
+    height: 50vh;
+  }
+
+  .play-btn {
+    width: 60px;
+    height: 60px;
+    font-size: 18px;
+  }
+
+  /* Testimonials */
+  .testimonial-text {
+    font-size: 1.1rem !important;
+  }
+
+  /* FAQ */
+  .faq-question {
+    font-size: 0.95rem !important;
+  }
+
+  /* Footer */
+  .footer {
+    padding: var(--spacing-lg) 0 var(--spacing-md);
+  }
+
+  .footer-top {
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .footer-bottom {
+    text-align: center;
+  }
+
+  .footer-legal {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  /* Floating Socials */
+  .floating-socials {
+    bottom: 10px;
+    right: 10px;
+    gap: 8px;
+  }
+
+  .floating-socials .social-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .floating-socials .social-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Forms */
+  .form-control {
+    font-size: 0.9rem;
+  }
+
+  /* Portfolio Filters */
+  .portfolio-filters {
+    gap: 0.75rem;
+  }
+
+  .filter-btn {
+    font-size: 0.65rem;
+  }
+
+  /* Masonry */
+  .masonry-grid {
+    column-count: 1 !important;
+  }
+
+  /* Lightbox */
+  .lightbox-img {
+    max-width: 95%;
+  }
+
+  .lightbox-close {
+    top: 0.75rem;
+    right: 0.75rem;
+    font-size: 2rem;
+  }
+
+  /* Video Modal */
+  .modal-content {
+    width: 95% !important;
+  }
+
+  /* CTA section buttons */
+  .flex.justify-center.gap-sm {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Intro section */
+  .intro-title {
+    font-size: clamp(1.75rem, 6vw, 2.5rem) !important;
+  }
+
+  /* Booking / Contact forms */
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  /* Packages grid */
+  .packages-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+/* ==========================================================================
+   MOBILE — max-width: 767px (All phones)
+   ========================================================================== */
+
+@media (max-width: 767px) {
+  .section {
+    padding: var(--spacing-lg) 0;
+  }
+
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.5rem; }
+
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+
+  /* Header */
+  .header {
+    height: 90px;
+  }
+
+  .logo img {
+    width: 220px;
+    height: 75px;
+  }
+
+  /* Hero */
+  .hero {
+    padding-top: 90px;
+    min-height: 100svh;
+  }
+
+  .hero-bg {
+    transform: scale(1.15) !important;
+  }
+
+  /* Service Cards */
+  .service-card {
+    height: 320px;
+  }
+
+  .service-card-content {
+    padding: var(--spacing-sm);
+  }
+
+  .service-card-desc {
+    max-height: 40px !important;
+    opacity: 1 !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* Stats */
+  .stat-num {
+    font-size: 3rem !important;
+  }
+
+  .stats-grid.grid-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: var(--spacing-md);
+  }
+
+  /* Page Hero */
+  .page-hero {
+    height: 45vh;
+    min-height: 280px;
+  }
+
+  /* Video Section */
+  .video-section {
+    height: 60vh;
+  }
+
+  /* Testimonials */
+  .testimonial-text {
+    font-size: 1.25rem !important;
+    padding: 0 var(--spacing-sm);
+  }
+
+  .testimonial-slider {
+    padding: 0;
+  }
+
+  /* WhatsApp bar override */
+  .whatsapp-float {
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    border-radius: 0;
+    font-size: 1rem;
+    font-family: var(--font-body);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    height: 60px;
+    gap: 10px;
+  }
+
+  /* Floating Socials */
+  .floating-socials {
+    bottom: 15px;
+    right: 15px;
+    gap: 10px;
+  }
+
+  .floating-socials .social-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .floating-socials .social-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Mobile menu links */
+  .mobile-nav .nav-link {
+    font-size: 1.5rem;
+  }
+
+  /* Footer */
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-col {
+    text-align: center;
+  }
+
+  .footer-col p {
+    max-width: 100% !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer-col .flex {
+    justify-content: center;
+  }
+
+  .footer-col img {
+    margin: 0 auto;
+  }
+
+  /* Instagram Grid */
+  .insta-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Gallery pages: masonry */
+  .masonry-grid {
+    column-count: 1 !important;
+  }
+
+  /* Service list items (services page) */
+  .service-list-item {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    padding: var(--spacing-md) 0 !important;
+  }
+
+  /* Team grid (about page) */
+  .team-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Philosophy grid (about page) */
+  .philosophy-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Packages grid */
+  .packages-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Booking / Contact forms */
+  .form-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Breadcrumb overflow */
+  .breadcrumb {
+    font-size: 0.7rem;
+    flex-wrap: wrap;
+  }
+
+  /* Gallery page grid overrides */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem !important;
+  }
+
+  /* Portfolio detail */
+  .portfolio-hero-title {
+    font-size: 2rem !important;
+  }
+
+  /* Film grid */
+  .films-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Horizontal overflow prevention */
+  body {
+    overflow-x: hidden;
+  }
+
+  img, video, iframe {
+    max-width: 100%;
+  }
+}
+
+
+/* ==========================================================================
+   TABLET — 768px to 1023px
+   ========================================================================== */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+
+  /* Header */
+  .header {
+    height: 100px;
+  }
+
+  .logo img {
+    width: 280px;
+    height: 95px;
+  }
+
+  /* Hero */
+  .hero {
+    padding-top: 100px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 6vw, 4rem) !important;
+  }
+
+  /* Service Cards */
+  .service-card {
+    height: 380px;
+  }
+
+  /* Stats */
+  .stat-num {
+    font-size: 3.5rem !important;
+  }
+
+  .stats-grid.grid-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: var(--spacing-md);
+  }
+
+  /* Footer */
+  .footer-top {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Instagram Grid */
+  .insta-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  /* Masonry */
+  .masonry-grid {
+    column-count: 2 !important;
+  }
+
+  /* Gallery page grid overrides */
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  /* Films grid */
+  .films-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Service list items */
+  .service-list-item {
+    gap: 2rem !important;
+  }
+}
+
+
+/* ==========================================================================
+   DESKTOP — 1024px+
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+  /* Footer */
+  .footer-top {
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  }
+
+  /* Instagram Grid */
+  .insta-grid {
+    grid-template-columns: repeat(6, 1fr) !important;
+  }
+
+  /* Gallery page grid overrides */
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+
+/* ==========================================================================
+   LARGE DESKTOP — 1440px+
+   ========================================================================== */
+
+@media (min-width: 1440px) {
+  .container {
+    max-width: var(--container-width);
+  }
+}
+
+
+/* ==========================================================================
+   Touch Device Enhancements
+   ========================================================================== */
+
+@media (hover: none) and (pointer: coarse) {
+  /* Show descriptions always on touch devices */
+  .service-card-desc {
+    max-height: 40px !important;
+    opacity: 0.8 !important;
+  }
+
+  /* Disable hover zoom on touch */
+  .hover-zoom:hover img {
+    transform: none;
+  }
+
+  /* Larger touch targets */
+  .btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .filter-btn {
+    min-height: 44px;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .slider-btn {
+    width: 48px;
+    height: 48px;
+  }
+
+  .faq-question {
+    min-height: 48px;
+  }
+
+  /* Disable custom cursor on touch devices */
+  .cursor-dot,
+  .cursor-outline {
+    display: none !important;
+  }
+}
+
+
+/* ==========================================================================
+   Safe Area Insets (Notched phones)
+   ========================================================================== */
+
+@supports (padding: env(safe-area-inset-bottom)) {
+  .footer-bottom {
+    padding-bottom: calc(var(--spacing-md) + env(safe-area-inset-bottom));
+  }
+
+  .floating-socials {
+    bottom: calc(15px + env(safe-area-inset-bottom));
+    right: calc(15px + env(safe-area-inset-right));
+  }
+
+  .whatsapp-float {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .mobile-menu {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+  .header,
+  .hamburger,
+  .mobile-menu,
+  .floating-socials,
+  .whatsapp-float,
+  .hero-scroll,
+  .video-preloader {
+    display: none !important;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 2rem 0;
+  }
+
+  body {
+    color: #000;
+    background: #fff;
+  }
+}
+
+
+/* ==========================================================================
+   Landscape Phone Fix
+   ========================================================================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    min-height: auto;
+    padding: 80px 0 2rem;
+  }
+
+  .page-hero {
+    height: 100vh;
+    min-height: auto;
+  }
+
+  .video-section {
+    height: 100vh;
+  }
+
+  .mobile-nav .nav-link {
+    font-size: 1.25rem !important;
+  }
+
+  .mobile-nav {
+    gap: 1rem !important;
+  }
 }

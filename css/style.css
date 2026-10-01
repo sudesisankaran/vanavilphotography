@@ -28,6 +28,18 @@
   --header-height: 130px;
 }
 
+@media (max-width: 767px) {
+  :root {
+    --header-height: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --header-height: 80px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   :root {
     --transition-fast: 0s;

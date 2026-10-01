@@ -78,6 +78,7 @@
             z-index: 1;
             /* Scale up to crop out built-in black bars from the video */
             transform: scale(1.35);
+            /* Mobile gets a smaller scale via responsive.css */
         }
         .hero-content {
             position: relative;
@@ -1071,13 +1072,15 @@
                 });
             });
 
-            // Parallax Hero
+            // Parallax Hero (only on desktop)
             const heroBg = document.getElementById('hero-bg');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY < window.innerHeight) {
-                    heroBg.style.transform = `scale(1.05) translateY(${window.scrollY * 0.3}px)`;
-                }
-            });
+            if (window.innerWidth >= 1024) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY < window.innerHeight) {
+                        heroBg.style.transform = `scale(1.35) translateY(${window.scrollY * 0.3}px)`;
+                    }
+                });
+            }
         });
         
         function openVideoModal(url) {
